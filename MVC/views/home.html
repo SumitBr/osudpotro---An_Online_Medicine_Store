@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Pharmacy - Home{% endblock %}
+{% block content %}
+
+<main>
+  {% if user.is_authenticated == False %}
+  <section class="py-5 text-center container">
+    <div class="row py-lg-3">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="h1 fw-bold">Search, View, Add to Cart, Buy</h1>
+        <p class="lead text-muted">Make buying medicines simple and easy</p>
+        <p>
+          <a href="{% url "account:register" %}" class="btn btn-primary my-2">Make an account</a>
+        </p>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+ 
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="pb-3 h5">All Listings</div>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+
+        {% for listing in listings %}
+        {% if listing.in_stock%}
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="img-fluid" alt="Responsive image" src="{{ listing.image.url }}">
+            <div class="card-body">
+              <p class="card-text">
+                <a class="text-dark text-decoration-none" href="{{ listing.get_absolute_url }}">{{ listing.name }}</a>
+              </p>
+              <div class="fw-bold">{{listing.price}} Tk.</div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
