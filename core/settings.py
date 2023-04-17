@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'MVC',
     'core',
+    'widget_tweaks',
     # 'TestCode',
 ]
  

@@ -11,7 +11,13 @@ app_name = 'MVC'
 urlpatterns = [
      path('', controllers.listing_all, name='listing_all'),
      path('listing/<slug:listing_slug>/', controllers.listing_detail, name='listing_detail'),
+     path('search', controllers.search_view, name='search'),
      path('category/<slug:category_slug>/', controllers.category_list, name='category_list'),
+     path('user_address', controllers.user_address_view, name='address'),
+     path('purchase', controllers.payment_success_view, name='payment'),
+     path('payment-success', controllers.payment_success_view,name='payment-success'),
+     # path('customer-address', views.user_address_view,name='user-address'),
+
      path('cart', controllers.cart_summary, name='cart_summary'),
      path('cart/add/', controllers.cart_add, name='cart_add'),
      path('cart/delete/', controllers.cart_delete, name='cart_delete'),
