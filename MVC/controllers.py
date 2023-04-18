@@ -224,7 +224,7 @@ from . import models, forms, views
 def search_view(request):
     # whatever user write in search box we get in query
     query = request.GET['query']
-    products=models.Listing.objects.all().filter(Listing=="query")
+    products=models.Listing.objects.all().filter(slug=query)
     if 'product_ids' in request.COOKIES:
         product_ids = request.COOKIES['product_ids']
         counter=product_ids.split('|')

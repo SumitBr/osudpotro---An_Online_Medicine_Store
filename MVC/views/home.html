@@ -3,20 +3,41 @@
 {% block title %}Pharmacy - Home{% endblock %}
 {% block content %}
 
+
+
+<style media="screen">
+  body,
+html {
+height: 100%;
+}
+body {
+background-color:#8c9eff;
+}
+
+.page-wrapper {
+height: 100%;
+display: table;
+}
+</style>
+
+
+
 <main>
-  {% if user.is_authenticated == False %}
+ 
   <section class="py-5 text-center container">
     <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="h1 fw-bold">Search, View, Add to Cart, Buy</h1>
-        <p class="lead text-muted">Make buying medicines simple and easy</p>
+        <h1 class="h1 fw-bold">Prioritizing your health and empowering your journey to wellness.</h1>
+        <marquee scrolldelay="50" class="h6 fw-bold">"Your health, our priority!"</marquee>
+        <!-- <marquee scrolldelay="50">"Your health, our priority!"</marquee> -->
         <p>
-          <a href="{% url "account:register" %}" class="btn btn-primary my-2">Make an account</a>
+          {% if user.is_authenticated == False %}<a href="{% url "account:register" %}" class="btn btn-primary my-2">Create an account</a> {% endif %}
+          {% if user.is_authenticated == True %}<h2 class="h1 fw-bold" style="text-align:center; color:rgb(255, 255, 255);">Welcome.</h2>{% endif %}
         </p>
       </div>
     </div>
   </section>
-  {% endif %}
+ 
  
   <div class="album py-5 bg-light">
     <div class="container">
@@ -43,10 +64,9 @@
       </div>
     </div>
   </div>
-
 </main>
 
+
+
+
 {% endblock %}
-
-
-
