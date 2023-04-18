@@ -1,6 +1,5 @@
 #### CSE470 SOFTWARE ENGINEERING PROJECT
 
-## Run Project
 ### Install Prerequisites
 - `python`
 - `python-virtualenv`
@@ -28,5 +27,5 @@
 - `$ python manage.py createsuperuser`
 ### Provide Email and Password
 
-# There You Go!
+#### There You Go!
  
