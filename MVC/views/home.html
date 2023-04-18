@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Pharmacy - Home{% endblock %}
+{% block title %}OsudPotro- Home{% endblock %}
 {% block content %}
 
 
@@ -28,7 +28,7 @@ display: table;
     <div class="row py-lg-3">
       <div class="col-lg-6 col-md-8 mx-auto">
         <h1 class="h1 fw-bold">Prioritizing your health and empowering your journey to wellness.</h1>
-        <marquee scrolldelay="50" class="h6 fw-bold">"Your health, our priority!"</marquee>
+        <marquee scrolldelay="30" class="h6 fw-bold">"Your health, our priority!"</marquee>
         <!-- <marquee scrolldelay="50">"Your health, our priority!"</marquee> -->
         <p>
           {% if user.is_authenticated == False %}<a href="{% url "account:register" %}" class="btn btn-primary my-2">Create an account</a> {% endif %}
